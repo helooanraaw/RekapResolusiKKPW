@@ -344,3 +344,53 @@ footer {
         font-size: 2rem;
     }
 }
+
+/* Floating Navigation Buttons */
+.floating-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: var(--glass-highlight);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.floating-nav:hover {
+    background: var(--bg-card-hover);
+    color: var(--text-primary);
+    transform: translateY(-50%);
+}
+
+.floating-nav.next {
+    right: 2rem;
+}
+
+.floating-nav.prev {
+    left: 2rem;
+}
+
+@media (max-width: 1400px) {
+    .floating-nav.next { right: 1rem; }
+    .floating-nav.prev { left: 1rem; }
+}
+
+@media (max-width: 900px) {
+    .floating-nav {
+        width: 45px;
+        height: 45px;
+    }
+    .floating-nav.next { right: 0.5rem; }
+    .floating-nav.prev { left: 0.5rem; }
+}
